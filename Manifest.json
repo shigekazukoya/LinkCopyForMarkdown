@@ -1,0 +1,19 @@
+{
+
+    "name": "LinkCopy",
+
+    "description": "LinkCopyForMarkdown",
+
+    "version": "0.1",
+
+    "permissions": ["contextMenus"],
+
+    "background": {
+
+      "scripts": ["Main.js"]
+
+    },
+
+    "manifest_version": 2
+
+  }
