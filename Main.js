@@ -1,3 +1,16 @@
+// Create one test item for each context type.
+var contexts = ["page", "selection", "link", "editable", "image", "video",
+  "audio"];
+
+for (var i = 0; i < contexts.length; i++) {
+  var context = contexts[i];
+  var title = "Test '" + context + "' menu item";
+  var id = chrome.contextMenus.create({
+    "title": "LinkCopyForMarkdown", "contexts": [context],
+    "onclick": genericOnClick
+  });
+}
+
 function genericOnClick(info, tab) {
   var title = GetTitle()
   var url = GetURL()
@@ -36,17 +49,4 @@ function CopyToClipBoad(text) {
   ta.select()
   document.execCommand("copy")
   ta.parentElement.removeChild(ta)
-}
-
-// Create one test item for each context type.
-var contexts = ["page", "selection", "link", "editable", "image", "video",
-  "audio"];
-
-for (var i = 0; i < contexts.length; i++) {
-  var context = contexts[i];
-  var title = "Test '" + context + "' menu item";
-  var id = chrome.contextMenus.create({
-    "title": "LinkCopyForMarkdown", "contexts": [context],
-    "onclick": genericOnClick
-  });
 }
